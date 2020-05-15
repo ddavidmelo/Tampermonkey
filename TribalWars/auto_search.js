@@ -1,20 +1,18 @@
 // ==UserScript==
 // @name         Script Power
-// @namespace    http://tampermonkey.net/
-// @version      1.5
+// @namespace    https://github.com/ddavidmelo/Tampermonkey/TribalWars
+// @version      1.6
 // @description  try to take over the world!
 // @author       David
 // @match        https://pt73.tribalwars.com.pt/*
 // @grant        none
 // @include      https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
-// @include      /https?:\/\/github\.com.*\/pull\/.*/
 // @icon         https://dspt.innogamescdn.com/asset/b56a168/graphic/favicon.png
 // @updateURL    https://raw.githubusercontent.com/ddavidmelo/Tampermonkey/master/TribalWars/auto_search.js
 // @downloadURL  https://raw.githubusercontent.com/ddavidmelo/Tampermonkey/master/TribalWars/auto_search.js
 // ==/UserScript==
 
 (function() {
-    "use strict";
 
     var i = 0;
     var server_info = document.getElementById("serverDate");
