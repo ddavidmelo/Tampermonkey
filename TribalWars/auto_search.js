@@ -10,7 +10,7 @@
 // @updateURL    https://raw.githubusercontent.com/ddavidmelo/Tampermonkey/master/TribalWars/auto_search.js
 // @downloadURL  https://raw.githubusercontent.com/ddavidmelo/Tampermonkey/master/TribalWars/auto_search.js
 // ==/UserScript==
-asd
+
 (function() {
     var i = 0;
     var server_info = document.getElementById("serverDate");
