@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Script Power
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  try to take over the world!
 // @author       David
 // @match        https://pt73.tribalwars.com.pt/*
