@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Script Power
 // @namespace    http://tampermonkey.net/
-// @version      1.4
+// @version      1.5
 // @description  try to take over the world!
 // @author       David
 // @match        https://pt73.tribalwars.com.pt/*
@@ -14,6 +14,8 @@
 // ==/UserScript==
 
 (function() {
+    "use strict";
+
     var i = 0;
     var server_info = document.getElementById("serverDate");
     server_info.innerHTML = server_info.innerHTML + " <span> | </span> <span id=\"counter\"></span>";
