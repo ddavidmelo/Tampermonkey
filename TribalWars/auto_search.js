@@ -7,8 +7,8 @@
 // @match        https://pt73.tribalwars.com.pt/*
 // @grant        none
 // @include      https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
-// @updateURL    https://github.com/ddavidmelo/Tampermonkey/edit/master/TribalWars/auto_search.js
-// @downloadURL  https://github.com/ddavidmelo/Tampermonkey/edit/master/TribalWars/auto_search.js
+// @updateURL    https://raw.githubusercontent.com/ddavidmelo/Tampermonkey/master/TribalWars/auto_search.js
+// @downloadURL  https://raw.githubusercontent.com/ddavidmelo/Tampermonkey/master/TribalWars/auto_search.js
 // ==/UserScript==
 
 (function() {
@@ -37,5 +37,4 @@
     }
 
     setInterval(function(){ begin_search() },5000);
-asd
 })();
