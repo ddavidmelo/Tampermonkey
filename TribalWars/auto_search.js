@@ -13,7 +13,7 @@
 // ==/UserScript==
 
 (function() {
-
+    'use strict';
     var i = 0;
     var server_info = document.getElementById("serverDate");
     server_info.innerHTML = server_info.innerHTML + " <span> | </span> <span id=\"counter\"></span>";
