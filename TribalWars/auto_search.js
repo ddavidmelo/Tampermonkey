@@ -7,6 +7,7 @@
 // @match        https://pt73.tribalwars.com.pt/*
 // @grant        none
 // @include      https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
+// @icon         https://dspt.innogamescdn.com/asset/b56a168/graphic/favicon.png
 // @updateURL    https://raw.githubusercontent.com/ddavidmelo/Tampermonkey/master/TribalWars/auto_search.js
 // @downloadURL  https://raw.githubusercontent.com/ddavidmelo/Tampermonkey/master/TribalWars/auto_search.js
 // ==/UserScript==
