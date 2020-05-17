@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Script Power
 // @namespace    https://github.com/ddavidmelo/Tampermonkey/TribalWars
-// @version      1.7
+// @version      1.8
 // @description  try to take over the world!
 // @author       David
 // @match        https://pt73.tribalwars.com.pt/*
