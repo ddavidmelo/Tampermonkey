@@ -26,7 +26,7 @@
 
             $(document).ready(function(){
                 //$(".fill-all").css( "border", "13px solid red" );
-                $(".units-entry-all.squad-village-required:not(:last)").trigger('click');
+                $(".units-entry-all.squad-village-required").slice(0, 3).trigger('click');
             });
             setTimeout(function() {
                 $(document).ready(function(){
