@@ -14,13 +14,13 @@
 
 (function() {
     'use strict';
-    var i = 0;
+    var c = 0;
     var server_info = document.getElementById("serverDate");
     server_info.innerHTML = server_info.innerHTML + " <span> | </span> <span id=\"counter\"></span>";
     var troops_go =[[0   ,   0,   0,   0,   0,  0],     // Weak Search
                     [0   ,   0,   0,   0,   0,  0],     // Humble Search
                     [0   ,   0,   0,   0,   0,  0]];    // Smart Search
-                  // ⇟        
+                  // lan   esp   vik  lev  pes  pala
 
     function select_troops(x) {
         $("[name='spear']").val(troops_go[x][0]).trigger('change');
@@ -34,9 +34,9 @@
     }
 
     function begin_search() {
-        $(document).ready(function(){
-            var flag = true;
             for (var k = 0; k < 3; k++) {
+                console.log("here");
+                var flag = true;
                 if($(".status-specific").slice(k,k+1).find(".btn.btn-default.free_send_button").length) {
                     if(troops_go[k].reduce((a, b) => a + b, 0) >= 10) {
                         //$(".status-specific").slice(k,k+1).find(".btn.btn-default.free_send_button").css( "border", "13px solid red" );
@@ -46,6 +46,7 @@
                             var troops = tmp[i].innerHTML.replace('(','').replace(')','');
                             //console.log(troops,troops_go[k][i]);
                             if(troops < troops_go[k][i]) {
+                                console.log("Not enought troops");
                                 flag = false;
                                 break;
                             }
@@ -53,12 +54,11 @@
                         if(flag) {
                             select_troops(k);
                         };
-                    }
-                }
+                    } else {console.log("More than 10 troops needed");}
+                } else {console.log("Search Not Available");}
             };
-            console.log($(".units-entry-all.squad-village-required").length);
-        });
-        document.getElementById("counter").innerHTML = i++;
+
+        document.getElementById("counter").innerHTML = c++;
     }
 
     setInterval(function(){ begin_search() },5000);
