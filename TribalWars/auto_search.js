@@ -20,7 +20,7 @@
     var troops_go =[[0   ,   0,   0,   0,   0,  0],     // Weak Search
                     [0   ,   0,   0,   0,   0,  0],     // Humble Search
                     [0   ,   0,   0,   0,   0,  0]];    // Smart Search
-                  // lan   esp   vik  lev  pes  pala
+                  // lan   esp   vik  lev  pes  pala 
 
     function select_troops(x) {
         $("[name='spear']").val(troops_go[x][0]).trigger('change');
