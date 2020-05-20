@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Script Power
+// @name         Script Novo
 // @namespace    https://github.com/ddavidmelo/Tampermonkey/TribalWars
-// @version      1.8
+// @version      1.9
 // @description  try to take over the world!
 // @author       David
 // @match        https://pt73.tribalwars.com.pt/*
@@ -17,24 +17,47 @@
     var i = 0;
     var server_info = document.getElementById("serverDate");
     server_info.innerHTML = server_info.innerHTML + " <span> | </span> <span id=\"counter\"></span>";
+    var troops_go =[[0   ,   0,   0,   0,   0,  0],     // Weak Search
+                    [0   ,   0,   0,   0,   0,  0],     // Humble Search
+                    [0   ,   0,   0,   0,   0,  0]];    // Smart Search
+                  // ⇟        
+
+    function select_troops(x) {
+        $("[name='spear']").val(troops_go[x][0]).trigger('change');
+        $("[name='sword']").val(troops_go[x][1]).trigger('change');
+        $("[name='axe']").val(troops_go[x][2]).trigger('change');
+        $("[name='light']").val(troops_go[x][3]).trigger('change');
+        $("[name='heavy']").val(troops_go[x][4]).trigger('change');
+        $("[name='knight']").val(troops_go[x][5]).trigger('change');
+        console.log("Troops Selected");
+        $(".status-specific").slice(x,x+1).find(".btn.btn-default.free_send_button").trigger('click');
+    }
 
     function begin_search() {
-        var x = document.getElementsByClassName("units-entry-all squad-village-required");
-        var lanceiros = x[0].innerHTML.replace('(','').replace(')','');
-        if (lanceiros > 10) {
-            console.log("Start");
-
-            $(document).ready(function(){
-                //$(".fill-all").css( "border", "13px solid red" );
-                $(".units-entry-all.squad-village-required").slice(0, 3).trigger('click');
-            });
-            setTimeout(function() {
-                $(document).ready(function(){
-                    $(".btn.btn-default.free_send_button:last").trigger('click');
-                });
-
-            }, 2000);
-        }
+        $(document).ready(function(){
+            var flag = true;
+            for (var k = 0; k < 3; k++) {
+                if($(".status-specific").slice(k,k+1).find(".btn.btn-default.free_send_button").length) {
+                    if(troops_go[k].reduce((a, b) => a + b, 0) >= 10) {
+                        //$(".status-specific").slice(k,k+1).find(".btn.btn-default.free_send_button").css( "border", "13px solid red" );
+                        for (var i = 0; i < 6; i++) {
+                            //console.log(i);
+                            var tmp = document.getElementsByClassName("units-entry-all squad-village-required");
+                            var troops = tmp[i].innerHTML.replace('(','').replace(')','');
+                            //console.log(troops,troops_go[k][i]);
+                            if(troops < troops_go[k][i]) {
+                                flag = false;
+                                break;
+                            }
+                        }
+                        if(flag) {
+                            select_troops(k);
+                        };
+                    }
+                }
+            };
+            console.log($(".units-entry-all.squad-village-required").length);
+        });
         document.getElementById("counter").innerHTML = i++;
     }
 
