@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Script Novo
+// @name         Script Power
 // @namespace    https://github.com/ddavidmelo/Tampermonkey/TribalWars
 // @version      1.9
 // @description  try to take over the world!
