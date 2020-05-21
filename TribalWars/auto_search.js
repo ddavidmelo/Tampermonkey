@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Script Power
 // @namespace    https://github.com/ddavidmelo/Tampermonkey/TribalWars
-// @version      1.9
+// @version      1.10
 // @description  try to take over the world!
 // @author       David
 // @match        https://pt73.tribalwars.com.pt/*
@@ -19,7 +19,8 @@
     server_info.innerHTML = server_info.innerHTML + " <span> | </span> <span id=\"counter\"></span>";
     var troops_go =[[0   ,   0,   0,   0,   0,  0],     // Weak Search
                     [0   ,   0,   0,   0,   0,  0],     // Humble Search
-                    [0   ,   0,   0,   0,   0,  0]];    // Smart Search
+                    [0   ,   0,   0,   0,   0,  0],     // Smart Search
+                    [0   ,   0,   0,   0,   0,  0]];    // Extreme Search
                   // lan   esp   vik  lev  pes  pala 
 
     function select_troops(x) {
@@ -34,7 +35,7 @@
     }
 
     function begin_search() {
-            for (var k = 0; k < 3; k++) {
+            for (var k = 0; k < 4; k++) {
                 console.log("here");
                 var flag = true;
                 if($(".status-specific").slice(k,k+1).find(".btn.btn-default.free_send_button").length) {
