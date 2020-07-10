@@ -1,7 +1,7 @@
 // ==UserScript== PT74
-// @name         Script Power
+// @name         PT74 AUTO SEARCH
 // @namespace    https://github.com/ddavidmelo/Tampermonkey/TribalWars
-// @version      1.10
+// @version      1.11
 // @description  try to take over the world!
 // @author       David
 // @match        https://pt74.tribalwars.com.pt/*
