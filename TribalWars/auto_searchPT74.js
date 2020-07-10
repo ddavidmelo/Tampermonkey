@@ -17,9 +17,9 @@
     var c = 0;
     var server_info = document.getElementById("serverDate");
     server_info.innerHTML = server_info.innerHTML + " <span> | </span> <span id=\"counter\"></span>";
-    var troops_go =[[0   ,   0,   0,   0,   100,   0,   0,  0],     // Weak Search
+    var troops_go =[[0   ,   0,   0,   0,   0,   0,   0,  0],     // Weak Search
                     [0   ,   0,   0,   0,   0,   0,   0,  0],     // Humble Search
-                    [111 ,  30,   0,   0,   0,   0,   0,  0],     // Smart Search
+                    [0   ,   0,   0,   0,   0,   0,   0,  0],     // Smart Search
                     [0   ,   0,   0,   0,   0,   0,   0,  0]];    // Extreme Search
                   // lan   esp   vik arch  lev  levAR pes pala
 
